@@ -1,4 +1,4 @@
-var quote = [
+var quotes = [
   {
     quote: "When we are no longer able to change a situation, we are challenged to change ourselves.",
     source: "Viktor E. Frankl",
@@ -31,28 +31,3 @@ var quote = [
   }
 
 ];
-
-function getRandomQuotes (quote){
-  let randomNumber = Math.floor(Math.random() * quote.length);
-  let getQuotes = quote[randomNumber];
-  return getQuotes;
-}
-
-function printQuote(arr) {
-let quoteRandom = getRandomQuotes(quote);
-  let quoteToPrint = '<p class="quote">' + quoteRandom.quote + '</p>';
-  quoteToPrint += '<p Class="source">' + quoteRandom.source;
-  quoteToPrint += '<span class="citation">' + quoteRandom.citation + '</span>';
-  quoteToPrint += '<span class="year">' + quoteRandom.year + '</span>' + '</p>';
-return quoteToPrint;
-}
-
-function print (func){
-  let final = document.querySelector('#quote-box');
-  final.innerHTML = func;
-}
-print(printQuote(quote));
-
-document.querySelector('#loadQuote').addEventListener('click', () => {
-  print(printQuote(quote));
-})
