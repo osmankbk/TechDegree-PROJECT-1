@@ -12,7 +12,7 @@ let quoteRandom = getRandomQuotes(quotes);
   quoteToPrint += '<p Class="source">' + quoteRandom.source;
   quoteToPrint += '<span class="citation">' + quoteRandom.citation + '</span>';
   quoteToPrint += '<span class="year">' + quoteRandom.year + '</span>' + '</p>';
-return quoteToPrint;
+return document.querySelector('#quote-box').innerHTML = quoteToPrint;
 }
 
 function rgbColor() {
@@ -22,15 +22,9 @@ color += Math.floor(Math.random () * 256) + ',';
 color += Math.floor(Math.random () * 256) + ',';
 color += ')';
 return color;
-
 }
-
-function print (func){
-  let final = document.querySelector('#quote-box');
-  final.innerHTML = func;
-}
-print(printQuote(quotes));
+printQuote(quotes);
 
 document.querySelector('#loadQuote').addEventListener('click', () => {
-  print(printQuote(quotes));
+  printQuote(quotes);
 })
