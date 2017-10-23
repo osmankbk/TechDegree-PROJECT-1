@@ -15,6 +15,16 @@ let quoteRandom = getRandomQuotes(quotes);
 return quoteToPrint;
 }
 
+function rgbColor() {
+let color = 'rgb(';
+color += Math.floor(Math.random () * 256) + ',';
+color += Math.floor(Math.random () * 256) + ',';
+color += Math.floor(Math.random () * 256) + ',';
+color += ')';
+return color;
+
+}
+
 function print (func){
   let final = document.querySelector('#quote-box');
   final.innerHTML = func;
