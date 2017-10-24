@@ -1,13 +1,24 @@
 let timerOut;
+let usedQuotes = [];
+let retrievedQuotes;
+
 
 
 function getRandomQuotes (quotes){
   let randomNumber = Math.floor(Math.random() * quotes.length);
   let getQuotes = quotes[randomNumber];
+  retrievedQuotes = usedQuotes.push(getQuotes);
+
+  if(quotes.length === 0){
+    quotes = retrievedQuotes;
+    usedQuotes = [];
+  }
   return getQuotes;
 }
-timerOut = window.setInterval(printQuote, 10000);
 
+
+
+timerOut = window.setInterval(printQuote, 10000);
 function printQuote(arr) {
 let quoteRandom = getRandomQuotes(quotes);
   let quoteToPrint = '<p class="quote">' + quoteRandom.quote + '</p>';
@@ -16,6 +27,7 @@ let quoteRandom = getRandomQuotes(quotes);
   quoteToPrint += '<span class="year">' + quoteRandom.year + '</span>';
   quoteToPrint += '<span class="tag">, Category: ' + quoteRandom.tag + '</span>';
   quoteToPrint += '</p>';
+
   document.body.style.backgroundColor = rgbColor();
 return document.querySelector('#quote-box').innerHTML = quoteToPrint;
 }
