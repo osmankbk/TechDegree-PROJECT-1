@@ -3,11 +3,11 @@ let usedQuotes = [];
 let retrievedQuotes;
 
 
-
 function getRandomQuotes (quotes){
   let randomNumber = Math.floor(Math.random() * quotes.length);
   let getQuotes = quotes[randomNumber];
   retrievedQuotes = usedQuotes.push(getQuotes);
+  quotes.splice(usedQuotes, 1);
 
   if(quotes.length === 0){
     quotes = retrievedQuotes;
@@ -15,8 +15,6 @@ function getRandomQuotes (quotes){
   }
   return getQuotes;
 }
-
-
 
 timerOut = window.setInterval(printQuote, 10000);
 function printQuote(arr) {
@@ -43,5 +41,5 @@ return color;
 printQuote(quotes);
 
 document.querySelector('#loadQuote').addEventListener('click', () => {
-  printQuote(quotes);
+console.log(printQuote(quotes));
 })
