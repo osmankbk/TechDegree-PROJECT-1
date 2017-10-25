@@ -1,9 +1,11 @@
-//Title: Random Quote Generator
+//Title: Treehouse Project 1
+//Project: Random Quote Generator
+//Goal: exceed expectation
 
 //The comments below are in order of how i proceeded throug the Project
+//Create the quots array in a different file(quotes.js) to keep things organized
 
-/*Create the quots array in a different file(quotes.js) to keep things organized
- * create a function(getRandomQuotes) to retrieve a random quotes from the array
+ /*create a function(getRandomQuotes) to retrieve a random quotes from the array
  *create a function(printQuote) that calls the getRandomQuotes() function and stores the returned quote object in a variable
  *construct a string in the printQuote() function containing different properties of the quote object and prints out the final html to the page using the innerHTML on the 'quote-box' div
  *call the printQuote() to display random quotes on the webpage
