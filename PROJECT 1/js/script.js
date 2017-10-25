@@ -6,7 +6,7 @@ function getRandomQuotes (quotes){
   let randomNumber = Math.floor(Math.random() * quotes.length);
   let getQuotes = quotes[randomNumber];
   usedQuotes.push(getQuotes);
-  quotes.splice(usedQuotes, 1)[0];
+  quotes.splice(randomNumber, 1);
   console.log(quotes.length)
 
   if(quotes.length === 0){
