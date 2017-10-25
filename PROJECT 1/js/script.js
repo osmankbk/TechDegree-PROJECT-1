@@ -21,7 +21,7 @@ let timerOut;
 let usedQuotes = [];
 
 
-function getRandomQuotes (){
+function getRandomQuote(){
   let randomNumber = Math.floor(Math.random() * quotes.length);
   let getQuotes = quotes[randomNumber];
   usedQuotes.push(getQuotes);
@@ -36,7 +36,7 @@ function getRandomQuotes (){
 
 timerOut = window.setInterval(printQuote, 10000);
 function printQuote() {
-let quoteRandom = getRandomQuotes();
+let quoteRandom = getRandomQuote();
   let quoteToPrint = '<p class="quote">' + quoteRandom.quote + '</p>';
   quoteToPrint += '<p Class="source">' + quoteRandom.source;
   quoteToPrint += '<span class="citation">' + quoteRandom.citation + '</span>';
